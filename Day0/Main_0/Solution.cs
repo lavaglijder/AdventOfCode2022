@@ -1,4 +1,4 @@
-﻿class solution
+﻿public class Solution
 {
     static void Main()
     {
@@ -11,12 +11,12 @@
         Console.WriteLine("\nSolution 2 answer: " + solution_2(input));
     }
 
-    static object solution_1(string input)
+    public static object solution_1(string input)
     {
         return "none";
     }
 
-    static object solution_2(string input)
+    public static object solution_2(string input)
     {
         return "none";
     }
