@@ -15,9 +15,14 @@ public class Tests
     }
 
     [Test]
-    public void Test_Solutions()
+    public void TestSolution1()
     {
         Assert.That(Solution.solution_1(testInput), Is.EqualTo("none"));
-        Assert.That(Solution.solution_2(testInput), Is.EqualTo("none"));
     }
+
+    [Test]
+    public void TestSolution2()
+    {
+        Assert.That(Solution.solution_2(testInput), Is.EqualTo("none"));
+    } 
 }
