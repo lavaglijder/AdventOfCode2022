@@ -14,22 +14,18 @@
     public static bool isOneWithinRange(string[] strs)
     {
         string[] numberRange1 = strs[0].Split("-");
+        int num11 = int.Parse(numberRange1[0]);
+        int num12 = int.Parse(numberRange1[1]);
         string[] numberRange2 = strs[1].Split("-");
+        int num21 = int.Parse(numberRange2[0]);
+        int num22 = int.Parse(numberRange2[1]);
 
+        bool? firstHigher = (num11 > num21) ? true : ((num11 == num21) ? null : false);
+        bool? secondHigher = (num12 > num22) ? true : ((num12 == num22) ? null : false);
 
-        if (int.Parse(numberRange1[0]) <= int.Parse(numberRange2[0]) &&
-            int.Parse(numberRange1[1]) >= int.Parse(numberRange2[1]))
-        {
-            return true;
-        }
-
-        if (int.Parse(numberRange2[0]) <= int.Parse(numberRange1[0]) &&
-            int.Parse(numberRange2[1]) >= int.Parse(numberRange1[1]))
-        {
-            return true;
-        }
-
-        return false;
+        // It did cringe and said it would be always falls lmao smart ass
+        // ReSharper disable twice ConditionIsAlwaysTrueOrFalse
+        return firstHigher != secondHigher || (firstHigher is null && secondHigher is null);
     }
 
     public static bool Overlaps(string[] strs)
